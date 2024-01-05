@@ -18,7 +18,7 @@ public class LinkListNode {
                 n = n.next;
             }
             n.next = node;
-            head =n;
+
 
 
         }
