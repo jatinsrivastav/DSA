@@ -93,21 +93,65 @@ public class BST {
         }
     }
 
-    public void populateSortedArray(int[] nums){
+    public void populateSortedArray(int[] nums) {
         populateSortedArray(nums, 0, nums.length);
 
     }
 
     private void populateSortedArray(int[] nums, int start, int end) {
-      if (start>=end){
-          return;
-      }
+        if (start >= end) {
+            return;
+        }
 
 
-       int mid =(start+end)/2;
-       this.insert(nums[mid]);
-       populateSortedArray(nums, start, mid);
-       populateSortedArray(nums, mid+1, end);
+        int mid = (start + end) / 2;
+        this.insert(nums[mid]);
+        populateSortedArray(nums, start, mid);
+        populateSortedArray(nums, mid + 1, end);
+
+    }
+
+
+    public void PreOrder() {
+        PreOrder(root);
+    }
+
+    private void PreOrder(Node node) {
+        if (node == null) {
+            return;
+        }
+
+        System.out.println(node.value + "");
+        PreOrder(node.left);
+        PreOrder(node.right);
+
+    }
+    public void InOrder() {
+        InOrder(root);
+    }
+
+    private void InOrder(Node node) {
+        if (node == null) {
+            return;
+        }
+
+
+        InOrder(node.left);
+        System.out.println(node.value + "");
+        InOrder(node.right);
+
+    }
+    public void PostOrder() {
+        PostOrder(root);
+    }
+    private void PostOrder(Node node) {
+        if (node == null) {
+            return;
+        }
+
+        PostOrder(node.left);
+        PostOrder(node.right);
+        System.out.println(node.value + "");
 
     }
 }
