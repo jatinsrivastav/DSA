@@ -15,7 +15,9 @@ public class App
         Scanner scanner =new Scanner(System.in);
         BinaryTree binaryTree =new BinaryTree();
         binaryTree.populate(scanner);
-        binaryTree.display();
+        //binaryTree.display();
+
+        binaryTree.prettyDisplay();
 
 
     }
